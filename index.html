@@ -91,7 +91,7 @@
             <div class="col">
                 <table class="table">
                     <thead>
-                    <tr>
+                    <tr id="tb_row">
                         <th scope="col">ID</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
@@ -106,7 +106,9 @@
                         <td>Otto</td>
                         <td>@mdo</td>
                         <td>GDSE</td>
+
                     </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -242,15 +244,14 @@
         $('#student-table').append(record)
     });
 
-    $('#student-table').on('click','tr',function (){
-        let index = $(this.index());
+    $('#student-table').on('click','tr',()=>{
+        let index = $(this).index();
         let id = $(this).find(".stuId-value").text();
         let first = $(this).find(".stuFirst-value").text();
         let last = $(this).find(".stuLast-value").text();
         let address = $(this).find(".stuAddress-value").text();
-        let program = $(this).find(".stuProgram-value").text();
-
-        console.log(id);
+        let grade = $(this).find(".stuProgram-value").text();
+        console.log("value: ",id,first,last,address,grade);
     });
 
 
