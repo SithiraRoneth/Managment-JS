@@ -244,7 +244,7 @@
         $('#student-table').append(record)
     });
 
-    $('#student-table').on('click','tr',()=>{
+    $('#student-table').on('click','tr',function (){
         let index = $(this).index();
         let id = $(this).find(".stuId-value").text();
         let first = $(this).find(".stuFirst-value").text();
@@ -252,6 +252,12 @@
         let address = $(this).find(".stuAddress-value").text();
         let grade = $(this).find(".stuProgram-value").text();
         console.log("value: ",id,first,last,address,grade);
+
+        $("#stu-id").val(id);
+        $("#first").val(first);
+        $("#last").val(last);
+        $("#address").val(address);
+        $('input[name="flexRadioDefault"][value=${grade}]').prop('checked',true);
     });
 
 
