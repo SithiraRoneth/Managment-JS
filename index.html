@@ -232,18 +232,25 @@
         console.log("Program :"+ program);
 
         var record = `<tr>
-            <th scope="row">${stuid}</th>
-            <td>${stuFirst}</td>
-            <td>${stuLast}</td>
-            <td>${stuAddress}</td>
-            <td>${program}</td>
+            <th scope="row" class="stuId-value">${stuid}</th>
+            <td class="stuFirst-value">${stuFirst}</td>
+            <td class="stuLast-value">${stuLast}</td>
+            <td class="stuAddress-value">${stuAddress}</td>
+            <td class="stuProgram-value">${program}</td>
         </tr>`;
 
         $('#student-table').append(record)
     });
 
-    $('#student-table').on('click','tr',()=>{
-        console.log("I am tr")
+    $('#student-table').on('click','tr',function (){
+        let index = $(this.index());
+        let id = $(this).find(".stuId-value").text();
+        let first = $(this).find(".stuFirst-value").text();
+        let last = $(this).find(".stuLast-value").text();
+        let address = $(this).find(".stuAddress-value").text();
+        let program = $(this).find(".stuProgram-value").text();
+
+        console.log(id);
     });
 
 
